@@ -8,7 +8,7 @@ var path = require("path")
 
 
 //Setting port location
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 
 
 // Sets up Express to handle data parsing
