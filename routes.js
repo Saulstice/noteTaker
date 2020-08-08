@@ -1,4 +1,4 @@
-var noteData = require("./db/db.json");
+var noteData = require("./Develop/db/db.json");
 var path = require("path");
 var fs = require("fs");
 const { json } = require("express");
@@ -46,7 +46,7 @@ module.exports = function (app) {
 
     app.delete("/api/notes/:title", function (req, res) {
         var id = Object.keys(req.body);
-        fs.readFile("./db/db.json", "utf8", function (error, data) {
+        fs.readFile("./Develop/db/db.json", "utf8", function (error, data) {
 
             if (error) throw error;
 
@@ -60,7 +60,7 @@ module.exports = function (app) {
                     deleted.push(thing);
                 }
             });
-            fs.writeFile("./db/db.json", JSON.stringify(deleted), function (err) {
+            fs.writeFile("./Develop/db/db.json", JSON.stringify(deleted), function (err) {
                 if (err) throw err;
                 console.log("Note deleted");
             });
