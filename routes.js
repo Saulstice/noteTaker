@@ -35,7 +35,6 @@ module.exports = function (app) {
         console.log('Saved Note: ', newNote);
     });
 
-
     //Delete route
     app.delete('/api/notes/:id', function (req, res) {
         var saved = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
