@@ -1,15 +1,9 @@
-// Downloading all dependencies needed
+// Downloading dependencies 
 var express = require("express");
-var fs = require('fs')
 var app = express();
-var noteData = require("./db/db.json");
-var path = require("path")
-
-
 
 //Setting port location
-var PORT = 8080;
-
+var PORT = process.env.PORT || 8080;
 
 // Sets up Express to handle data parsing
 app.use(express.urlencoded({ extended: true }));
